@@ -1,0 +1,30 @@
+group 'inativ'
+version '1.0-SNAPSHOT'
+
+buildscript {
+    ext.kotlin_version = '1.1.2-2'
+
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath group: 'org.jooby', name: 'jooby-gradle-plugin', version: '1.1.2'
+    }
+}
+
+apply plugin: 'application'
+apply plugin: 'jooby'
+apply plugin: 'kotlin'
+
+mainClassName = "MainKt"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlin_version"
+    compile group: 'org.jooby', name: 'jooby-lang-kotlin', version: '1.1.2'
+    compile group: 'org.jooby', name: 'jooby-jetty', version: '1.1.2'
+}
